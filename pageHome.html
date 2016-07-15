@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>后台首页</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="Hovace">
+
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css"/>
+
+    <!-- Image Cropper  -->
+    <link rel="stylesheet" href="assets/css/plugins/cropper/cropper.css"/>
+
+    <!-- Fonts  -->
+    <link href='assets/fonts/gooleapis.css' rel='stylesheet' type='text/css'>
+
+
+    <!-- Timeline Styling  -->
+    <link rel="stylesheet" href="assets/css/app/timeline.css"/>
+
+
+    <!-- Base Styling  -->
+    <link rel="stylesheet" href="assets/css/app/app.v1.css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/h5/html5shiv.js"></script>
+    <script src="assets/js/h5/respond.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        .userLogin {
+
+            font-size: 12px;
+            width: 54px;
+            height: 54px;
+            display: block;
+            background-image: url(assets/images/avtar/user.png);
+            background-repeat: no-repeat;
+            background-position: top center;
+
+        }
+
+        .welcome {
+            width: 200px;
+            padding-top: 12px;
+            overflow: hidden;
+        }
+
+        .welcome span {
+            float: left;
+
+        }
+
+        .Serch input {
+            float: left;
+            display: inline-block;
+            width: 13em;
+            height: 2em;
+            margin-top: 2em;
+            border: none;
+            border-bottom: 2px solid #cecece;
+            outline: none;
+        }
+
+        .Serch i {
+            float: left;
+            display: inline-block;
+            margin-top: 2em;
+            margin-right: 1em;
+            font-size: 1.3em;
+        }
+
+        header {
+            background: #fff;
+
+        }
+
+        .redBox {
+            background: #fe5454;
+            color: #fff;
+            font-size: 18px;
+            height: 56px;
+            line-height: 56px;
+            border-radius: 5px;
+        }
+
+        .photoImg {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 315px;
+            height: 14em;
+            line-height: 190px;
+            border: 2px dashed #707070;
+            border-radius: 5px;
+            margin-bottom: 3em;
+        }
+
+        .photoImg img {
+            width: 100%;
+            height: 100%;
+
+            border: none;
+
+        }
+
+        .similarFont {
+            font-size: 20px;
+            color: #000;
+        }
+
+        .similarValue {
+            font-size: 46px;
+            color: #fe5454;
+        }
+
+        .Logout {
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            left: 40px;
+            bottom: 2em;
+
+        }
+
+        .borderDashed {
+            border: 2px dashed #707070;
+            border-radius: 4px;
+        }
+
+        .call {
+            width: 168px;
+            height: 46px;
+            margin-top: 4em;
+
+        }
+
+        .Btn, .call, .Logout {
+            outline: none;
+            background: #fe5454;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .vodBox {
+
+            height: 422px;
+
+        }
+
+        .vodBoxT {
+            width: 168px;
+            height: 100px;
+            line-height: 100px;
+            position: absolute;
+            right: 0;
+            top: 322px;
+
+        }
+
+        .Btn {
+            height: 46px;
+            padding: 0 30px;
+        }
+
+        .btnLef {
+            background: #aaaaaa;
+            color: #303030;
+        }
+
+        .BT {
+
+            height: 52px;
+            line-height: 52px;
+            font-size: 18px;
+            text-align: left;
+            padding-left: 16px;
+            margin-top: 50px;
+            background: #e7e8e8;
+            border-radius: 10px;
+
+        }
+
+        .leftX, .rightX {
+            width: 49%;
+            display: inline-block;
+            text-align: justify;
+            height: 46px;
+            line-height: 46px;
+            color: #000;
+
+        }
+
+        .leftX p, .rightX p {
+            padding-left: 12px;
+        }
+
+        .terminalData {
+            text-align: left;
+            color: #000;
+            padding-left: 16px;
+            height: 46px;
+            line-height: 46px;
+
+        }
+
+        .terminalData span {
+            padding-right: 4em;
+            position: relative;
+        }
+
+        .photoK {
+            height: 140px;
+            width: 100%;
+            overflow: auto;
+
+        }
+
+        .smallPhoto {
+            float: left;
+            width: 150px;
+            height: 110px;
+            margin: 10px 8px;
+
+        }
+
+        ::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #e7e8e8;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #fe5454;
+        }
+
+        /*        ::-webkit-scrollbar-thumb:hover {background-color:#9c3}
+                ::-webkit-scrollbar-thumb:active {background-color:#00aff0}*/
+        .YJL, .YJR {
+            max-width: 340px;;
+            min-width: 280px;
+            height: 183px;
+
+
+        }
+
+        .YJL img, .YJR img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .YJL {
+            margin-left: 12px;
+            float: left;
+        }
+
+        .YJR {
+            float: right;
+            margin-right: 12px;
+        }
+
+        .textStyle {
+            padding-left: 12px;
+            color: #000;
+        }
+
+        .findingsOfAudit{
+            font-size: 24px;
+            color: #000;
+        }
+        .findingsOfAudit input{
+            margin-left: 30px;
+            outline:none;
+        }
+
+
+
+    </style>
+</head>
+<body data-ng-app>
+
+
+<aside class="left-panel" style="">
+
+    <div class="text-center"
+         style="background-color: #fff;border-right: 1px solid #a1a1a1;height: 96px;line-height: 96px;margin-top: -25px; ">
+        <img src="assets/images/icons/000Logo.png" class="" alt="Logo">
+
+
+    </div>
+
+
+    <nav class="navigation">
+
+        <ul class="list-unstyled text-center">
+            <li class="has-submenu ">
+                <a href="#">
+                    <span class="nav-label">状态
+                        <i class="fa fa-circle"
+                           style="color: #d20005; font-size: 13px;border: 1px solid #000;border-radius: 50%"></i>
+                    </span>
+                </a>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="##">
+                            示忙
+                            <i class="fa fa-circle"
+                               style="color: #d20005; font-size: 13px;border: 1px solid #000;border-radius: 50%"></i>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="##">示闲
+                            <i class="fa fa-circle"
+                               style="color: #6cef3d; font-size: 13px;border: 1px solid #000;border-radius: 50%"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="##">
+                            摘机
+                            <i class="fa fa-circle"
+                               style="color: #fdff32; font-size: 13px;border: 1px solid #000;border-radius: 50%"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="##">
+                            挂机
+                            <i class="fa fa-circle"
+                               style="color: #bfbfbf; font-size: 13px;border: 1px solid #000;border-radius: 50%"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+            <li class="has-submenu active">
+                <a href="pageHome.html">
+                    <span class="nav-label ">后台首页</span></a>
+            </li>
+            <li class="has-submenu "><a href="password.html"> <span class="nav-label">修改密码</span></a>
+
+            </li>
+
+        </ul>
+    </nav>
+
+    <button class="Logout">登出</button>
+</aside>
+<!-- Aside Ends-->
+
+<section class="content">
+
+
+    <header class="top-head container-fluid" style="height: 96px;line-height: 96px;">
+
+        <div class="Serch">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="搜索">
+        </div>
+
+        <div id="welcome" class=" pull-right hidden-xs welcome">
+
+            <span class="text-center">
+                 <i class="text-center userLogin">客服人员</i>
+            </span>
+            <span id="userName" style="color: #000;margin: -20px 0 0 20px;;font-size: 50px;color:#fe5454;">Gerg</span>
+
+
+        </div>
+
+
+    </header>
+    <!-- Header Ends -->
+    <div class="warper container-fluid text-center ">
+
+        <div class="col-md-8">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div style="position: relative">
+                        <div class="videoArea">
+                            <div class="col-md-8 borderDashed vodBox">
+                                <img src="assets/images/loading/07.png" style="margin-top: 6em" alt="">
+                                <p>当前排队人数：<span class="preValue">1</span></p>
+                                <button class="call">呼叫</button>
+                            </div>
+                            <div class=" col-md-4 borderDashed vodBoxT">
+                                <img src="assets/images/loading/08.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="panel-body">
+                    <p>
+                        <button class="Btn btnLef pull-left" style="margin-right: 20px">抓拍对比</button>
+                        <button class="Btn btnLef pull-left">终端截屏存档</button>
+                        <button class="Btn pull-right">呼叫保持</button>
+                    </p>
+                </div>
+                <div class="panel-body">
+                    <div class="BT">客户信息</div>
+
+                    <div class="leftX">
+                        <p>客户姓名：<span>李三</span></p>
+                        <p>联系方式：<span>14923439239</span></p>
+                        <p>证件类型：<span>身份证</span></p>
+                    </div>
+                    <div class="rightX">
+                        <p>性别：<span>男</span></p>
+                        <p>地址：<span>北京市朝阳区兴隆家园3号楼2203</span></p>
+                        <p>证件号：<span>110103243235332342</span></p>
+                    </div>
+
+
+                </div>
+                <div class="panel-body">
+                    <div class="BT">终端信息</div>
+                    <div>
+                        <p class="terminalData">
+                            <span>2016-06-24</span>
+                            <span>10:24:32</span>
+                            <span>iphone 6s</span>
+                            <span>坐席A接待</span>
+                        </p>
+                        <p class="terminalData">
+                            <span>2016-06-24</span>
+                            <span>10:24:32</span>
+                            <span>iphone 6s</span>
+                            <span>坐席A接待</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="BT">操作信息</div>
+
+                    <div class="photoK">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class=" borderDashed smallPhoto" style="margin-left: 12px; ">
+                                        <img src="assets/images/loading/09.png" alt="">
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class=" borderDashed smallPhoto">
+                                        <img src="assets/images/loading/09.png" alt="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class=" borderDashed smallPhoto">
+                                        <img src="assets/images/loading/09.png" alt="">
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class=" borderDashed smallPhoto">
+                                        <img src="assets/images/loading/09.png" alt="">
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class=" borderDashed smallPhoto">
+                                        <img src="assets/images/loading/09.png" alt="">
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class=" borderDashed smallPhoto">
+                                        <img src="assets/images/loading/09.png" alt="">
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class=" borderDashed col-md-5 YJL">
+                        <img src="assets/images/loading/09.png" alt="">
+
+                    </div>
+                    <div class=" borderDashed col-md-5 YJR">
+                        <img src="assets/images/loading/09.png" alt="">
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel-body text-left">
+                    <p class="textStyle">
+                        抓拍照与公安联网核查照对比结果：<span class="similarValue">90%</span>
+                    </p>
+
+                </div>
+
+                <div class="panel-body">
+
+                    <form action="" class="findingsOfAudit">
+                        <p>人工审核结果：
+                            <label>
+                                <input class="yn" type="radio" value="yes" name="y" style="border: 1px solid #00a0e6;">通过
+                            </label>
+                            <label>
+                                <input class="yn" type="radio" value="no" name="y">未通过
+                            </label>
+                        </p>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <div class="panel-body text-center">
+                        <p class="redBox">公安联网核查二代身份证信息</p>
+
+                    </div>
+                    <div class="photoImg">
+                        <img src="assets/images/loading/09.png" alt="公安联网核查二代身份证信息">
+                    </div>
+
+                </div>
+
+
+                <div class="panel-body">
+                    <div class="panel-body text-center">
+                        <p class="redBox">现场证件照信息</p>
+
+                    </div>
+                    <div class="photoImg">
+                        <img src="assets/images/loading/09.png" alt="现场证件照信息">
+                    </div>
+                    <div class="photoImg">
+                        <img src="assets/images/loading/09.png" alt="现场证件照信息">
+                    </div>
+                </div>
+
+
+                <div class="panel-body">
+                    <div class="panel-body text-center">
+                        <p class="redBox">公安联网核查对比结果</p>
+
+                    </div>
+
+                    <div class="similar">
+                        <p class="similarFont">相似度</p>
+                        <p class="similarValue">90%</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+
+    <!-- Warper Ends Here (working area) -->
+
+
+</section>
+<!-- Content Block Ends Here (right box)-->
+
+
+<script type="text/javascript">
+    window.onload=function(){
+        var list=document.getElementsByClassName("list-unstyled")[0],color=list.getElementsByTagName("i")[0],oUl=document.getElementsByClassName("list-unstyled")[1],oLis=oUl.getElementsByTagName("li");
+
+        for (var i=0;i<oLis.length;i++){
+            oLis[i].onclick=function(){
+                var oi=this.getElementsByTagName("i")[0];
+                console.log(oi.style.color);
+                oUl.style.display="none";
+                color.style.color=oi.style.color;
+            }
+        }
+    }
+</script>
+
+<!-- JQuery v1.9.1 -->
+<script src="assets/js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="assets/js/plugins/underscore/underscore-min.js"></script>
+<!-- Bootstrap -->
+<script src="assets/js/bootstrap/bootstrap.min.js"></script>
+
+<!-- NanoScroll -->
+<script src="assets/js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+
+<!-- Custom JQuery -->
+<script src="assets/js/app/custom.js" type="text/javascript"></script>
+
+</body>
